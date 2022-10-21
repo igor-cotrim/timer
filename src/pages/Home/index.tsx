@@ -8,10 +8,28 @@ const Home = () => {
       <form action="">
         <S.FormContainer>
           <label htmlFor="task">Vou trabalhar em</label>
-          <input id="task" type="text" />
+          <S.TaskInput
+            id="task"
+            list="task-suggestions"
+            placeholder="Dê um nome para o seu projeto"
+          />
+          <datalist id="task-suggestions">
+            <option value="Projeto 1" />
+            <option value="Projeto 2" />
+            <option value="Projeto 3" />
+            <option value="Projeto 4" />
+            <option value="Banana" />
+          </datalist>
 
           <label htmlFor="minutesAmount">durante</label>
-          <input id="minutesAmount" type="number" />
+          <S.MinutesAmountInput
+            id="minutesAmount"
+            type="number"
+            placeholder="00"
+            step={5}
+            min={5}
+            max={60}
+          />
 
           <span>minutos.</span>
         </S.FormContainer>
@@ -24,10 +42,10 @@ const Home = () => {
           <span>0</span>
         </S.CountdownContainer>
 
-        <button type="submit">
+        <S.StartCountdownButton type="submit">
           <Play size={24} />
           Começar
-        </button>
+        </S.StartCountdownButton>
       </form>
     </S.HomeContainer>
   )
