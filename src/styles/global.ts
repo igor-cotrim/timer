@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from "styled-components";
+import { createGlobalStyle, css } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   ${({ theme }) => css`
@@ -22,9 +22,9 @@ export const GlobalStyle = createGlobalStyle`
     input,
     textarea,
     button {
-      font-family: "Roboto", sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-weight: 400;
       font-size: 1rem;
     }
   `}
-`;
+`

@@ -1,2 +1,2 @@
-export * from "./global";
-export * from "./themes/default";
+export * from './global'
+export * from './themes/default'
