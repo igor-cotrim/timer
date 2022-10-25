@@ -13,7 +13,6 @@ import * as S from './styles'
 const Home = () => {
   const { createNewCycle, interruptCycle, activeCycle } =
     useContext(CyclesContext)
-
   const newCycleForm = useForm<NewCycleFormDataModel>({
     resolver: zodResolver(newCycleFormValidationSchema),
     defaultValues: {
@@ -21,14 +20,19 @@ const Home = () => {
       minutesAmount: 0,
     },
   })
-  const { handleSubmit, watch } = newCycleForm
+  const { handleSubmit, watch, reset } = newCycleForm
 
   const task = watch('task')
   const isSubmitDisabled = !task
 
+  const handleCreateNewCycle = (data: NewCycleFormDataModel) => {
+    createNewCycle(data)
+    reset()
+  }
+
   return (
     <S.HomeContainer>
-      <form onSubmit={handleSubmit(createNewCycle)} action="">
+      <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
