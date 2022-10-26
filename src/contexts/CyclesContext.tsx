@@ -2,7 +2,6 @@ import React, { createContext, useReducer, useState } from 'react'
 
 import { CycleModel, NewCycleFormDataModel } from '../models'
 import {
-  ActionTypes,
   addNewCycleAction,
   cyclesReducer,
   interruptCurrentCycleAction,
