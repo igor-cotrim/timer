@@ -11,7 +11,7 @@ import { Countdown, NewCycleForm } from './components'
 import * as S from './styles'
 
 const Home = () => {
-  const { createNewCycle, interruptCycle, activeCycle } =
+  const { createNewCycle, interruptCurrentCycle, activeCycle } =
     useContext(CyclesContext)
   const newCycleForm = useForm<NewCycleFormDataModel>({
     resolver: zodResolver(newCycleFormValidationSchema),
@@ -38,7 +38,7 @@ const Home = () => {
         </FormProvider>
         <Countdown />
         {activeCycle ? (
-          <S.StopCountdownButton onClick={interruptCycle} type="button">
+          <S.StopCountdownButton onClick={interruptCurrentCycle} type="button">
             <HandPalm size={24} />
             Interromper
           </S.StopCountdownButton>
